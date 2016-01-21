@@ -31,7 +31,7 @@ except IOError:
 #
 #  main():
 #
-if __name__ == '__main__':
+  if __name__ == '__main__':
   application = imp.load_source('app', 'flaskapp.py')
   port = application.app.config['PORT']
   ip = application.app.config['IP']
