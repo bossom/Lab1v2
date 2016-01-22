@@ -11,6 +11,16 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/om.html')
+def index():
+    return render_template('om.html')
+
+@app.route('/kontakt.html')
+def index():
+    return render_template('kontakt.html')
+
+
+
 @app.route('/<path:resource>')
 def serveStaticResource(resource):
     return send_from_directory('static/', resource)
