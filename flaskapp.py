@@ -19,6 +19,9 @@ def index():
 def index():
     return render_template('kontakt.html')
 
+@app.route('/templates/bocker.html')
+def index():
+    return render_template('/templates/bocker.html')
 
 
 @app.route('/<path:resource>')

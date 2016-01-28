@@ -24,10 +24,14 @@
         <button type="button" id="btnom" class="btn-lg btn-info" data-toggle="tooltip" data-placement="left" title="Om">Om</button>
         <button type="button" id="btnbok" class="btn-lg btn-info" data-toggle="tooltip" data-placement="top" title="Böcker">Böcker</button>
         <button type="button" id="btnkont" class="btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" title="Kontakt">Konktakt</button>
+        <button type="button" id="btntest" class="btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" title="Kontakt">TEST</button>
 
     </div>
     <br/>
 
+    <div id="div1">
+
+    </div>
 
     <div id="tabBok">
         <div class="boklista">
@@ -125,14 +129,7 @@
         By Shaw, William
     </p></div>
 
-    <div id="tabOm" class="hidden">
 
-        <blockquote>
-<p>Det här är världens absolut bästa boksamling. </p>
-  <footer>Av <cite title="Source Title">Markus & Sanna</cite></footer>
-</blockquote>
-
-    </div>
 
 
     <div id="tabKont" class="hidden">
@@ -185,7 +182,15 @@
 </section>
 <script src="js/jquery.js"> </script>
 <script>
+
+
+
     $(function () {
+
+<!-- Testknapp -->
+  $('#btntest').on('click', function(){
+    $("#div1").get("bocker.html");
+     });
 
     <!-- Kontaktknapp -->
   $('#btnkont').on('click', function() {
@@ -205,9 +210,9 @@
    });
 
     <!-- Omknapp -->
-  $('#btnom').on('click', function() {
+    $("#btnom").on('click', function(){
+    $("#div1").load("om.html");
    $('#tabKont').addClass('hidden');
-    $('#tabOm').removeClass('hidden');
    $('#tabBok').addClass('hidden');
       $('#bok1').addClass('hidden');
          $('#bok2').addClass('hidden');
