@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Boksamling M&S</title>
-    <link href='css/bootstrap.min.css' rel="stylesheet">
-    <link href='css/site.css' rel="stylesheet">
+    <link href='../static/css/bootstrap.min.css' rel="stylesheet">
+    <link href='../static/css/site.css' rel="stylesheet">
 
 </head>
 
@@ -24,10 +24,18 @@
         <button type="button" id="btnom" class="btn-lg btn-info" data-toggle="tooltip" data-placement="left" title="Om">Om</button>
         <button type="button" id="btnbok" class="btn-lg btn-info" data-toggle="tooltip" data-placement="top" title="Böcker">Böcker</button>
         <button type="button" id="btnkont" class="btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" title="Kontakt">Konktakt</button>
-        <button type="button" id="btntest" class="btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" title="Kontakt">TEST</button>
 
     </div>
     <br/>
+
+    <div id="tabOm" class='hidden'>
+
+        <blockquote>
+<p>Det här är världens absolut bästa boksamling. </p>
+  <footer>Av <cite title="Source Title">Markus & Sanna</cite></footer>
+</blockquote>
+
+    </div>
 
     <div id="div1">
 
@@ -180,17 +188,13 @@
 
 
 </section>
-<script src="js/jquery.js"> </script>
+<script src="../static/js/jquery.js"> </script>
 <script>
 
 
 
     $(function () {
 
-<!-- Testknapp -->
-  $('#btntest').on('click', function(){
-    $("#div1").get("bocker.html");
-     });
 
     <!-- Kontaktknapp -->
   $('#btnkont').on('click', function() {
@@ -211,7 +215,7 @@
 
     <!-- Omknapp -->
     $("#btnom").on('click', function(){
-    $("#div1").load("om.html");
+    $("#tabOm").removeClass('hidden');
    $('#tabKont').addClass('hidden');
    $('#tabBok').addClass('hidden');
       $('#bok1').addClass('hidden');
