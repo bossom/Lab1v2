@@ -4,11 +4,27 @@ from datetime import datetime
 import re
 from flask import Flask, request, flash, url_for, redirect, \
      render_template, abort, send_from_directory, json
-from wtforms import validators, TextField
-from wtforms.fields.html5 import EmailField
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 app.config.from_pyfile('flaskapp.cfg')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Documents/Skola/TDDD83/formAnwers.db'
+db = SQLAlchemy(app)
+
+
+class formAnswers(db.Model):
+    name = db.Column(db.String(80), primary_key=True)
+    email = db.Column(db.String(80), unique=True)
+    message = db.Column(db.String(120), unique=False)
+
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def __repr__(self):
+        return '<User %r>' % self.name
+
 
 
 @app.route('/')
